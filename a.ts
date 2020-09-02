@@ -1,5 +1,5 @@
-const b = require('./b')
+const b = require('./b.ts');
 
-console.log(b)
+console.log(b);
 
-b()
+b();

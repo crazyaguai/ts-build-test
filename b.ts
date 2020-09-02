@@ -1,3 +1,5 @@
-module.exports = ()=>{
-  console.log('b')
-}
+module.exports = () => {
+  console.log('b');
+  console.log(Promise.resolve());
+  c1 = {};
+};
