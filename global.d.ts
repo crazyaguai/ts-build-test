@@ -1,1 +1,0 @@
-declare c1 = 1;
