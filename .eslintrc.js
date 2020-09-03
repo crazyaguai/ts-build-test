@@ -8,10 +8,10 @@ module.exports = {
     c1: true, // ？？？
   },
   extends: [
-    'airbnb-base',
-    'prettier',
-    'airbnb-typescript',
-    'prettier/@typescript-eslint',
+    'eslint-config-airbnb-base',
+    'eslint-config-prettier',
+    'eslint-config-airbnb-typescript',
+    'eslint-config-prettier/@typescript-eslint',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
