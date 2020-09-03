@@ -21,5 +21,6 @@ module.exports = {
   rules: {
     indent: ['error', 2],
     'no-console': ['off'],
+    'linebreak-style': [0, 'error', 'windows'], // 换行配置 windows \r\n linux \n
   },
 };
