@@ -9,6 +9,7 @@ module.exports = {
   },
   extends: [
     'airbnb-base',
+    'prettier',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -22,5 +23,8 @@ module.exports = {
     indent: ['error', 2],
     'no-console': ['off'],
     'linebreak-style': [0, 'error', 'windows'], // 换行配置 windows \r\n linux \n
+
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': ['error'],
   },
 };
