@@ -1,5 +1,5 @@
 module.exports = () => {
-  console.log("b");
+  console.log('b');
   console.log(Promise.resolve());
   console.log(Promise.resolve());
   c1 = {};
