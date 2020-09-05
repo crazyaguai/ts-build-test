@@ -9,6 +9,10 @@ module.exports = {
   },
   extends: [
     "eslint-config-airbnb-base",
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
     "eslint-config-prettier",
     // "eslint-config-airbnb-typescript",
     // "eslint-config-prettier/@typescript-eslint",
@@ -18,7 +22,13 @@ module.exports = {
     ecmaVersion: 2020,
     // ecmaVersion: 6,
   },
-  plugins: ["@typescript-eslint"],
+  plugins: ["eslint-plugin-import","@typescript-eslint","eslint-plugin-react"],
+  "settings": {
+    "import/extensions": [".tsx", ".ts",".jsx", ".js"],
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+  },
   rules: {
     indent: ["error", 2],
     "no-console": ["off"],
@@ -26,5 +36,9 @@ module.exports = {
 
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": ["error"],
+
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+
+    "import/extensions": ["off"]
   },
 };
