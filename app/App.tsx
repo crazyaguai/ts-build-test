@@ -1,11 +1,9 @@
-import React from 'react';
+import React from 'react'
+
+const styles = require('./style/index.less')
 
 function App() {
-  return (
-    <div className="App">
-      hello-word
-    </div>
-  );
+  return <div className={styles.text}>hello react</div>
 }
 
-export default App;
+export default App

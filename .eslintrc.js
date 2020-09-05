@@ -27,7 +27,6 @@ module.exports = {
     '@typescript-eslint',
     'eslint-plugin-react',
   ],
-
   settings: {
     'import/extensions': ['.tsx', '.ts', '.jsx', '.js'],
     'import/parsers': {
