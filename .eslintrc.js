@@ -22,7 +22,7 @@ module.exports = {
     ecmaVersion: 2020,
     // ecmaVersion: 6,
   },
-  plugins: ["eslint-plugin-import","@typescript-eslint","eslint-plugin-react"],
+  plugins: ["eslint-plugin-import", "@typescript-eslint","eslint-plugin-react"],
   "settings": {
     "import/extensions": [".tsx", ".ts",".jsx", ".js"],
     "import/parsers": {
