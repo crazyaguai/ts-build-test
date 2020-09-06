@@ -1,8 +1,9 @@
 module.exports = {
-  extends: 'stylelint-config-standard',
+  extends: [
+    'stylelint-config-standard',
+    'stylelint-config-idiomatic-order',
+    'stylelint-config-recess-order',
+  ],
   plugins: ['stylelint-order'],
-  rules: {
-    'order/order': ['custom-properties', 'declarations'],
-    'order/properties-order': ['width', 'height'],
-  },
+  rules: {},
 }
