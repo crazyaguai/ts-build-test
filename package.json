@@ -52,7 +52,7 @@
       "prettier --write",
       "git add"
     ],
-    "*.css": [
+    "*.less": [
       "stylelint --config ./.stylelintrc.js --fix",
       "git add"
     ]
