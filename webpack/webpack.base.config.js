@@ -25,9 +25,9 @@ const baseConfig = {
           {
             loader: 'babel-loader',
           },
-          {
-            loader: 'ts-loader',
-          },
+          // {
+          //   loader: 'ts-loader',
+          // },
         ],
       },
       {
