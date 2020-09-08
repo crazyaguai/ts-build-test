@@ -3,9 +3,14 @@ const webpack = require('webpack')
 const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const baseWebpackConfig = require('./webpack.base.config')
 
 const reactVendorConfig = require('./dll/reactVendor-manifest.json')
+
+function resolve(dir) {
+  return path.resolve(__dirname, '..', dir)
+}
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   mode: 'development',
@@ -17,7 +22,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     contentBase: false, // 使用CopyWebpackPlugin, 所以这里不需要
     compress: true,
     host: '0.0.0.0',
-    port: 3000,
+    port: 4000,
     https: false,
     open: true,
     overlay: {
@@ -25,15 +30,15 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       errors: true,
     }, // 是否显示编译错误
     publicPath: '/',
-    proxy: [
-      // {
-      //   context: ['/api'],
-      //   target: 'http://127.0.0.1:6666',
-      //   changeOrigin: true,
-      //   logLevel: 'debug',
-      // }
-    ],
-    quiet: true, // 使用FriendlyErrorsPlugin报错，所以把原生的报错关了
+    // proxy: [
+    //   {
+    //     context: ['/api'],
+    //     target: 'http://127.0.0.1:6666',
+    //     changeOrigin: true,
+    //     logLevel: 'debug',
+    //   }
+    // ],
+    quiet: false, // 使用FriendlyErrorsPlugin报错，所以把原生的报错关了
     watchOptions: {
       poll: false,
     },
@@ -43,11 +48,15 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     namedModules: true, // 热更新显示文件名
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      template: resolve('webpack/template/index.html'),
+      inject: true,
+    }),
     new CopyWebpackPlugin({
       patterns: [
         {
           from: path.resolve(__dirname, '../static'),
-          to: '/',
+          to: 'static',
         },
         // {
         //   from: path.resolve(__dirname, '../favicon.ico'),
